@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결혼합니다 💐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #f7f4f2 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        /* 헤더 */
+        .header {
+            text-align: center;
+            padding: 60px 30px 40px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #fefefe 100%);
+        }
+
+        .date {
+            font-size: 14px;
+            color: #888;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .names {
+            font-size: 32px;
+            font-weight: 600;
+            color: #d4a574;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        /* 메인 이미지 */
+        .main-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e8d5c4 0%, #f5e6dc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        /* 인사말 섹션 */
+        .greeting {
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .greeting-text {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* 일시/장소 섹션 */
+        .info-section {
+            padding: 40px 30px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #888;
+            min-width: 60px;
+            margin-right: 15px;
+        }
+
+        .info-content {
+            font-size: 15px;
+            color: #555;
+            flex: 1;
+        }
+
+        /* 지도 섹션 */
+        .map-section {
+            padding: 50px 30px;
+        }
+
+        .map-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .map-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .map-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .kakao-btn {
+            background: #FEE500;
+            color: #000;
+        }
+
+        .naver-btn {
+            background: #03C75A;
+            color: white;
+        }
+
+        .map-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* 연락처 섹션 */
+        .contact-section {
+            padding: 50px 30px;
+            background: #fafafa;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-group {
+            margin-bottom: 30px;
+        }
+
+        .contact-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .contact-btn {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-btn:hover {
+            background: #f5f5f5;
+            border-color: #d4a574;
+        }
+
+        /* 계좌번호 섹션 */
+        .account-section {
+            padding: 50px 30px;
+        }
+
+        .account-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .account-group {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .account-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .account-info {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .copy-btn {
+            padding: 8px 16px;
+            border: 1px solid #d4a574;
+            border-radius: 5px;
+            background: white;
+            color: #d4a574;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #d4a574;
+            color: white;
+        }
+
+        /* 푸터 */
+        .footer {
+            padding: 40px 30px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* 하트 애니메이션 */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .heart {
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <div class="date">2025. 06. 14 SAT 2:00PM</div>
+            <div class="title">결혼합니다</div>
+            <div class="names">신랑 <span class="heart">❤️</span> 신부</div>
+            <div class="subtitle">두 사람이 하나 되는 날</div>
+        </div>
+
+        <!-- 메인 이미지 -->
+        <div class="main-image">
+            💐
+        </div>
+
+        <!-- 인사말 -->
+        <div class="greeting">
+            <div class="greeting-text">
+                서로가 마주보며 다져온 사랑을<br>
+                이제 함께 한 곳을 바라보며<br>
+                걸어갈 수 있는 큰 사랑으로 키우고자 합니다.<br>
+                <br>
+                저희 두 사람이 사랑의 이름으로<br>
+                지켜나갈 수 있도록<br>
+                앞날을 축복해 주시면 감사하겠습니다.
+            </div>
+        </div>
+
+        <!-- 일시/장소 정보 -->
+        <div class="info-section">
+            <div class="info-title">예식 일시 및 장소</div>
+            <div class="info-item">
+                <div class="info-label">일시</div>
+                <div class="info-content">2025년 6월 14일 토요일 오후 2시</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">장소</div>
+                <div class="info-content">
+                    서울웨딩홀 3층 그랜드홀<br>
+                    서울시 강남구 테헤란로 123
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">문의</div>
+                <div class="info-content">010-1234-5678 (신랑)<br>010-9876-5432 (신부)</div>
+            </div>
+        </div>
+
+        <!-- 지도 -->
+        <div class="map-section">
+            <div class="map-title">오시는 길</div>
+            <div class="map-placeholder">
+                🗺️ 여기에 지도가 표시됩니다
+            </div>
+            <div class="map-buttons">
+                <button class="map-btn kakao-btn" onclick="openKakaoMap()">
+                    카카오맵
+                </button>
+                <button class="map-btn naver-btn" onclick="openNaverMap()">
+                    네이버지도
+                </button>
+            </div>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="contact-section">
+            <div class="contact-title">연락하기</div>
+            
+            <div class="contact-group">
+                <div class="contact-label">신랑측</div>
+                <div class="contact-buttons">
+                    <button class="contact-btn" onclick="callPhone('01012345678')">
+                        📞 신랑에게 전화
+                    </button>
+                    <button class="contact-btn" onclick="sendSMS('01012345678')">
+                        💬 문자 보내기
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-group">
+                <div class="contact-label">신부측</div>
+                <div class="contact-buttons">
+                    <button class="contact-btn" onclick="callPhone('01098765432')">
+                        📞 신부에게 전화
+                    </button>
+                    <button class="contact-btn" onclick="sendSMS('01098765432')">
+                        💬 문자 보내기
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 계좌번호 -->
+        <div class="account-section">
+            <div class="account-title">마음 전하실 곳</div>
+            
+            <div class="account-group">
+                <div class="account-label">신랑측</div>
+                <div class="account-info">카카오뱅크 1234-56-789012 (홍길동)</div>
+                <button class="copy-btn" onclick="copyAccount('1234567890112')">계좌복사</button>
+            </div>
+
+            <div class="account-group">
+                <div class="account-label">신부측</div>
+                <div class="account-info">국민은행 9876-54-321098 (김영희)</div>
+                <button class="copy-btn" onclick="copyAccount('98765432198')">계좌복사</button>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="footer">
+            <div class="heart">❤️</div>
+            <div style="margin-top: 10px;">
+                Thank you for celebrating with us
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 전화 걸기
+        function callPhone(number) {
+            window.location.href = 'tel:' + number;
+        }
+
+        // 문자 보내기
+        function sendSMS(number) {
+            window.location.href = 'sms:' + number;
+        }
+
+        // 카카오맵 열기
+        function openKakaoMap() {
+            // 실제 주소나 좌표로 변경하세요
+            window.open('https://map.kakao.com/link/map/서울웨딩홀,37.5012345,127.0398765', '_blank');
+        }
+
+        // 네이버지도 열기
+        function openNaverMap() {
+            // 실제 주소나 좌표로 변경하세요
+            window.open('https://map.naver.com/v5/search/서울웨딩홀', '_blank');
+        }
+
+        // 계좌번호 복사
+        function copyAccount(account) {
+            // 하이픈 제거한 숫자만 복사
+            navigator.clipboard.writeText(account).then(function() {
+                alert('계좌번호가 복사되었습니다!');
+            }).catch(function() {
+                alert('복사에 실패했습니다. 다시 시도해주세요.');
+            });
+        }
+    </script>
+</body>
+</html>
