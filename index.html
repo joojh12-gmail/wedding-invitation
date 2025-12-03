@@ -246,6 +246,59 @@
             margin-bottom: 20px;
         }
 
+        /* 셔틀버스 안내 */
+        .shuttle-info {
+            background: #fff9f0;
+            border: 2px solid #ffeaa7;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .shuttle-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #d63031;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shuttle-icon {
+            font-size: 24px;
+        }
+
+        .shuttle-route {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #d4a574;
+        }
+
+        .route-detail {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .route-time {
+            font-size: 13px;
+            color: #d63031;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .shuttle-note {
+            font-size: 13px;
+            color: #888;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
         .map-buttons {
             display: flex;
             gap: 10px;
@@ -490,7 +543,25 @@
         <div class="map-section">
             <div class="map-title">오시는 길</div>
             <img src="images/photo6.png" alt="오시는 길 약도" style="width:100%; border-radius:8px;">
+            
+            <!-- 셔틀버스 안내 -->
+            <div class="shuttle-info">
+                <div class="shuttle-title">
+                    <span class="shuttle-icon">🚌</span>
+                    셔틀버스 안내
+                </div>
+                
+                <div class="shuttle-route">
+                    <div class="route-detail">• 출발: 신림역 5번 출구</div>
+                    <div class="route-detail">• 배차: 약 15분 간격</div>
+                    <div class="route-time">⏱ 소요시간 약 7분</div>
+                </div>
+
+                <div class="shuttle-note">
+                    예식 후에도 하차하신 곳에서 신림역까지 셔틀버스가 운영됩니다.
+                </div>
             </div>
+            
             <div class="map-buttons">
                 <button class="map-btn kakao-btn" onclick="openKakaoMap()">
                     카카오맵
